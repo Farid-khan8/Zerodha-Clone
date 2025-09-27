@@ -19,12 +19,16 @@ const uri = process.env.MONGO_URL;
 app.use(
     cors({
         origin: [
+            // "http://localhost:3000", // frontend local dev
+            // "http://localhost:3001", // dashboard local dev (if used)
             "https://zerodha-clone-frontend-theta.vercel.app", // deployed frontend
             "https://zerodha-clone-dashboard-pink.vercel.app", // deployed dashboard
         ],
         credentials: true, // allow cookies to be sent
     })
 );
+// Handle preflight requests
+app.options("*", cors());
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use("/auth", AuthRouter);
