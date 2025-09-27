@@ -280,20 +280,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// FIXED: Explicit preflight handling
-app.options("*", (req, res) => {
-    res.header("Access-Control-Allow-Origin", req.headers.origin);
-    res.header(
-        "Access-Control-Allow-Methods",
-        "GET, POST, PUT, DELETE, OPTIONS"
-    );
-    res.header(
-        "Access-Control-Allow-Headers",
-        "Content-Type, Authorization, X-Requested-With, Accept, Origin"
-    );
-    res.header("Access-Control-Allow-Credentials", "true");
-    res.sendStatus(200);
-});
+// CORS preflight will be handled automatically by the cors middleware above
 
 app.use(bodyParser.json());
 app.use(cookieParser());
