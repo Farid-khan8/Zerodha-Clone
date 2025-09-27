@@ -1,0 +1,24 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+#logs
+logs
+*.log
+logs/*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build output (if you generate any)
+dist/
+build/
