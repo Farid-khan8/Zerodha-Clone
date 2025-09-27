@@ -18,7 +18,10 @@ const uri = process.env.MONGO_URL;
 
 app.use(
     cors({
-        origin: ["http://localhost:3000", "http://localhost:3001"], // frontend and dashboard ports
+        origin: [
+            "https://zerodha-clone-frontend-theta.vercel.app", // deployed frontend
+            "https://zerodha-clone-dashboard-pink.vercel.app", // deployed dashboard
+        ],
         credentials: true, // allow cookies to be sent
     })
 );
