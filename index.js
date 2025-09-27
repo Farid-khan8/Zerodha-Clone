@@ -28,7 +28,8 @@ app.use(
     })
 );
 // Handle preflight requests
-app.options("*", cors());
+// app.options("/*", cors());
+
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use("/auth", AuthRouter);
